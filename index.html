@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="tailwindcss.js"></script>
+    <script src="theme.js"></script>
+    <script src="script.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet"/>
+    <link rel="icon" href="https://img.freepik.com/free-vector/mail-envelope-with-1-alert_78370-3334.jpg?semt=ais_hybrid&w=740&q=80"/>
+    <title>You've Got Mail! 💌</title>
+</head>
+<body class="bg-gradient-to-br from-cute-blue via-cute-pink to-cute-purple min-h-screen flex flex-col items-center justify-center p-4 text-cute-dark">
+    <div class="glass rounded-3xl p-8 max-w-sm w-full shadow-xl text-center relative overflow-hidden transition-all duration-300 hover:shadow-2xl">
+        <div class="absolute -top-10 -right-10 w-32 h-32 bg-white opacity-40 rounded-full blur-xl"></div>
+        <div class="absolute -bottom-10 -left-10 w-32 h-32 bg-pink-300 opacity-30 rounded-full blur-xl"></div>
+        <span class="inline-block bg-pink-500 text-white text-xs font-bold px-3 py-1 rounded-full mb-4 shadow-sm">
+            NEW MESSAGE
+        </span>
+        <div class="text-6xl mb-4 animate-float cursor-pointer" onclick="openModal('messageModal')">
+            💌
+        </div>
+        <h1 class="text-2xl font-bold mb-2 text-gray-800">Hello, Cutie!</h1>
+        <p class="text-gray-600 mb-6 text-sm">You have received a special message. Press the button below to read it.</p>
+        <button onclick="openModal('messageModal')" class="w-full bg-gradient-to-r from-pink-400 to-purple-400 text-white font-bold py-3 px-6 rounded-xl shadow-lg hover:opacity-90 transition transform hover:scale-105 active:scale-95">Read Message ✨</button>
+        <div class="mt-6 flex justify-center space-x-4 text-xs text-gray-500">
+            <button onclick="openModal('privacyModal')" class="hover:text-pink-600 underline">Privacy Policy</button>
+            <span>|</span>
+            <button onclick="openModal('termsModal')" class="hover:text-pink-600 underline">Terms & Conditions</button>
+        </div>
+    </div>
+    <div id="messageModal" class="fixed inset-0 bg-black bg-opacity-40 hidden z-50 flex items-center justify-center p-4 opacity-0 transition-opacity duration-300 backdrop-blur-sm">
+        <div class="bg-white rounded-3xl shadow-2xl w-full max-w-md p-8 relative transform scale-95 transition-transform duration-300" id="messageContent">
+            <button onclick="closeModal('messageModal')" class="absolute top-4 right-4 text-gray-400 hover:text-pink-500 text-xl transition">&times;</button>
+            <div class="border-b border-gray-100 pb-4 mb-4">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-full bg-pink-100 flex items-center justify-center text-xl">🌸</div>
+                    <div>
+                        <h2 class="font-bold text-lg text-gray-800">Special Letter</h2>
+                        <p class="text-xs text-gray-500">From: James Damasco</p>
+                    </div>
+                </div>
+            </div>
+            <div class="prose prose-sm text-gray-600 leading-relaxed max-h-60 overflow-y-auto pr-2 custom-scrollbar">
+                <p class="mb-3">Hi! Oreo, Alam kong napakabilis, at sobrang bilis talaga HAHA!</p>
+                <p class="mb-3">Alam kong masisira yung nabuo natin na friendship.</p>
+                <p class="mb-3">At alam ko rin na hindi ka pa ready sa mga ganitong bagay, dahil sa mga nangyari rin sa past mo.</p>
+                <p class="mb-3">Pero feeling ko magiging awkward ng sobra pagkatapos ko sabihin 'to.</p>
+                <p class="mb-3">Nakakaba sabihin, pinag-isipan ko rin naman yung desisyon ko kung sasabihin ko ba, or huwag na.</p>
+                <p class="mb-3">Pero alam kong wala ka rin naman feelings sa'kin simula una pa naman. </p>
+                <p class="mb-3">I just want to say na, can i court you? Kung hindi ka pa ready.</p>
+                <p class="mb-3">It's okay, maghihintay ako.</p>
+                <p class="mb-3">Anw, ingat ka sa pag-uwi mo mamaya. Lovelots!</p>
+                <p><br><strong> - James Damasco</strong> 🧑‍💻</p>
+            </div>
+            <button onclick="closeModal('messageModal')" class="mt-6 w-full bg-gray-100 text-gray-600 font-semibold py-2 rounded-xl hover:bg-gray-200 transition">Close</button>
+        </div>
+    </div>
+    <div id="privacyModal" class="fixed inset-0 bg-black bg-opacity-40 hidden z-50 flex items-center justify-center p-4 backdrop-blur-sm">
+        <div class="bg-white rounded-2xl shadow-xl w-full max-w-lg p-6 relative max-h-[80vh] overflow-y-auto">
+            <button onclick="closeModal('privacyModal')" class="absolute top-4 right-4 text-gray-900 hover:text-gray-600">&times;</button>
+            <h2 class="text-xl font-bold mb-4 text-gray-800">🔒 Privacy Policy</h2>
+            <div class="text-sm text-gray-600 space-y-3">
+                <p><strong>Last Updated:</strong> January 2026</p>
+                <p>We value your privacy very much. Here is how we handle your data:</p>
+                <ul class="list-disc pl-5">
+                    <li>We do not collect personal data without consent.</li>
+                    <li>Cookies are used for aesthetic preferences only.</li>
+                    <li>Your cuteness is safe with us!</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+<div id="termsModal" class="fixed inset-0 bg-black bg-opacity-40 hidden z-50 flex items-center justify-center p-4 backdrop-blur-sm">
+    <div class="bg-white rounded-2xl shadow-xl w-full max-w-lg p-6 relative max-h-[80vh] overflow-y-auto">
+        <button onclick="closeModal('termsModal')" class="absolute top-4 right-4 text-gray-900 hover:text-gray-400">&times;</button>
+        <h2 class="text-xl font-bold mb-4 text-gray-800">📝 Terms & Conditions</h2>
+        <div class="text-sm text-gray-600 space-y-3">
+            <p>By using this cute mail service, you agree to the following:</p>
+            <ol class="list-decimal pl-5">
+                <li>Be kind and respectful.</li>
+                <li>Enjoy the pastel colors.</li>
+                <li>Share the love with others.</li>
+            </ol>
+        </div>
+    </div>
+</div>
+</body>
+</html>
